@@ -1,0 +1,21 @@
+# Ignore artifacts:
+build
+dist
+coverage
+node_modules
+
+# Logs and system files:
+*.log
+*.txt
+*.lock
+
+# Git and version control:
+.git
+
+# Minified files:
+*.min.js
+
+# IDE files:
+*.idea/
+.vscode/
+.DS_Store
