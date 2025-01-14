@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Something2Do</title>
+    <script src="https://kit.fontawesome.com/6ed07fb8fe.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="./sticky-notes.png">
+      
+</head>
+<body>
+    <div class="content">
+        <div class="main">
+            <button class="add-todo-btn" type="button"><i class="fa-solid fa-plus fa-sm"></i>Add Todo</button>
+            <div class="nav">
+                <button type="button" class="collapse-btn" title="Collapse">
+                    <i class="fa-solid fa-caret-up fa-xl fa-rotate-270"></i>
+                </button>
+                <div class="inset-bg"></div>
+                <div class="nav-row">
+                    <h1 id="nav-header">Menu</h1>
+                </div>
+                <div class="tasks">
+                    <h1 class="task-title">TASKS</h1>
+                    <div class="segmented-control vertical">
+                        <input type="radio" id="upcoming" name="vertical-tabs" hidden />
+                        <label for="upcoming" class="segmented-control__tab">
+                          <i class="fa-solid fa-angles-right fa-sm"></i>
+                          Upcoming
+                        </label>
+                    
+                        <input type="radio" id="today" name="vertical-tabs" hidden checked/>
+                        <label for="today" class="segmented-control__tab">
+                          <i class="fa-solid fa-calendar-day fa-sm"></i>
+                          Today
+                        </label>
+
+                        <input type="radio" id="overdue" name="vertical-tabs" hidden/>
+                        <label for="overdue" class="segmented-control__tab">
+                          <i class="fa-solid fa-clock fa-sm"></i>
+                          Overdue
+                        </label>
+
+                        <input type="radio" id="all-tasks" name="vertical-tabs" hidden/>
+                        <label for="all-tasks" class="segmented-control__tab">
+                          <i class="fa-solid fa-note-sticky fa-sm"></i>
+                          Sticky Wall
+                        </label>
+                    </div>
+                </div>                                                                    
+                <div class="categories">
+                    <h1 class="task-title">CATEGORIES</h1>
+                    <div class="add-category-input">
+                        <input type="text" name="add-new-category" id="add-new-category">
+                        <button type="button" class="add-cat"><i class="fa-solid fa-check fa-sm"></i></button>
+                    </div>
+                    <div class="segmented-control vertical">
+                      <input type="radio" class="user-category" id="category-General" name="vertical-categories" hidden />
+                      <label for="category-General" class="categories__tab">
+                        <i class="fa-solid fa-folder fa-sm"></i>
+                        General
+                      </label>
+                    </div>
+                    <button class="add-category-btn"><i class="fa-solid fa-plus fa-sm"></i></button>
+                </div>                                  
+            </div>
+            <div class="content-view">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
