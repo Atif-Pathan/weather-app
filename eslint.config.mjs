@@ -1,6 +1,7 @@
 import globals from 'globals';
 import pluginJs from '@eslint/js';
 import prettierConfig from 'eslint-config-prettier';
+import tailwindcssPlugin from 'eslint-plugin-tailwindcss';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -18,6 +19,7 @@ export default [
   pluginJs.configs.recommended,
   prettierConfig,
   {
+    plugins: { tailwindcss: tailwindcssPlugin },
     rules: {
       // Prefer const over let for variables that are never reassigned
       'prefer-const': [
@@ -37,6 +39,8 @@ export default [
           argsIgnorePattern: '^_', // Ignore arguments prefixed with _
         },
       ],
+      'tailwindcss/classnames-order': 'warn', // Warn if classes are not ordered logically
+      'tailwindcss/no-custom-classname': 'off',
     },
   },
 ];
