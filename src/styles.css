@@ -40,6 +40,7 @@ body {
   display: grid;
   grid-template-rows: repeat(15, 1fr);
   grid-template-columns: repeat(7, 1fr);
+  font-family: 'Nunito', sans-serif;
   /* gap: 1rem; */
 }
 
@@ -195,14 +196,16 @@ ul[role='list'] {
 } */
 
 .carousel {
-  left: 2rem;
+  left: calc(2rem);
   width: calc(100% - 4rem);
+  transition: all 0.2s ease;
+  /* padding: 0.5rem; */
   /* top: 50%; */
   /* transform: translate(0, -50%); */
 }
 
 .day-card {
-  border: 2px solid rgb(69, 98, 136);
+  /* border: 2px solid rgb(69, 98, 136); */
   background-color: rgb(206, 220, 238);
   min-width: calc((100% - 9rem) / 10);
 }
@@ -211,9 +214,10 @@ ul[role='list'] {
 #left-btn {
   position: absolute;
   z-index: 100;
-  /* background-color: white; */
+  background-color: rgb(226 232 240);
+
   width: 2rem;
-  height: calc(100% - 2rem + 4px);
+  height: calc(100% + 4px);
   cursor: pointer;
 }
 
@@ -228,7 +232,6 @@ ul[role='list'] {
 #right-btn {
   top: 50%;
   left: 100%;
-  /* background-color: red; */
   transform: translate(-100%, -50%);
 }
 
@@ -241,4 +244,18 @@ ul[role='list'] {
 .day,
 .date-card {
   line-height: 1.2;
+}
+
+.toggleTempUnits {
+  grid-row: 1/2;
+  grid-column: 3/5;
+  background-color: lightskyblue;
+}
+
+.feels-like-div,
+.precip-chance-div,
+.wind-div,
+.humidity-div,
+.uv-div {
+  border-bottom: 2px solid rgb(178, 191, 221);
 }
