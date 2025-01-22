@@ -26,7 +26,8 @@
         <i class="fa-solid fa-magnifying-glass"></i>
       </button>
     </div>
-    <div class="current-conditions min-h-fit">
+    <div class="toggleTempUnits"></div>
+    <div class="current-conditions flex min-h-fit gap-4">
       <div
         class="condition-image ml-8 flex h-full w-1/3 flex-col items-center justify-center gap-2"
       >
@@ -49,6 +50,35 @@
         <span class="last-updated text-center font-light italic text-gray-700"
           >Last Updated: 11:45:00</span
         >
+      </div>
+      <div
+        class="current-details flex flex-1 flex-col justify-center px-8 py-4"
+      >
+        <h1 class="condition mb-2 text-3xl font-bold">Partly Cloudy</h1>
+        <div class="feels-like-div flex justify-between py-2 text-xl">
+          <span class="feels-like">Feels like</span>
+          <span class="feels-like-temp font-bold">5°C</span>
+        </div>
+        <div class="precip-chance-div flex justify-between py-2 text-xl">
+          <span class="precip-chance">Precipitation chance</span>
+          <span class="precip-chance-percent font-bold">37%</span>
+        </div>
+        <div class="wind-div flex justify-between py-2 text-xl">
+          <span class="wind">Wind</span>
+          <span class="wind-speed-dir font-bold">NW 20 km/h</span>
+        </div>
+        <div class="humidity-div flex justify-between py-2 text-xl">
+          <span class="humidity">Humiditiy</span>
+          <span class="humidity-percent font-bold">15%</span>
+        </div>
+        <div class="uv-div flex justify-between py-2 text-xl">
+          <span class="uv-index">UV Index</span>
+          <span class="uv-rating font-bold">4</span>
+        </div>
+        <div class="visibility-div flex justify-between py-2 text-xl">
+          <span class="visibility">Visibility</span>
+          <span class="visibility-km font-bold">40 km</span>
+        </div>
       </div>
     </div>
     <div class="gif-container mr-8 overflow-hidden">
