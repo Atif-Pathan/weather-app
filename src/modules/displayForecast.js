@@ -1,7 +1,15 @@
 import { parseISO } from 'date-fns';
 
-export default async function displayForecast(daysArray) {
+export default async function displayForecast(daysArray, unit) {
   const dayCards = document.querySelectorAll('.day-card');
+
+  let tempUnit;
+
+  if (unit === 'us') {
+    tempUnit = 'F';
+  } else {
+    tempUnit = 'C';
+  }
 
   if (!daysArray || daysArray.length === 0) {
     console.error('No forecast data available.');
@@ -43,7 +51,7 @@ export default async function displayForecast(daysArray) {
     if (dayElement) dayElement.textContent = dayName;
     if (dateElement) dateElement.textContent = dateFormatted;
     if (hiTempElement) hiTempElement.textContent = `${tempmax}°`;
-    if (loTempElement) loTempElement.textContent = `${tempmin}°C`;
+    if (loTempElement) loTempElement.textContent = `${tempmin}°${tempUnit}`;
     if (precipPercentElement)
       precipPercentElement.textContent = `${precipprob}%`;
 

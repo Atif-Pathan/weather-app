@@ -1,6 +1,9 @@
+import updateGif from './updateGif';
+
 export default async function displayCurrentConditions(
   currentConditions,
-  resolvedAddress
+  resolvedAddress,
+  unit
 ) {
   const {
     datetime,
@@ -44,6 +47,17 @@ export default async function displayCurrentConditions(
     return 'Invalid degree value';
   }
 
+  let tempUnit;
+  let dist;
+
+  if (unit === 'us') {
+    tempUnit = 'F';
+    dist = 'miles';
+  } else {
+    tempUnit = 'C';
+    dist = 'km';
+  }
+
   const currentTemp = document.querySelector('.current-temp');
   const location = document.querySelector('.current-location');
   const lastUpdated = document.querySelector('.last-updated');
@@ -54,23 +68,26 @@ export default async function displayCurrentConditions(
   const humid = document.querySelector('.humidity-percent');
   const uv = document.querySelector('.uv-rating');
   const visibile = document.querySelector('.visibility-km');
-  currentTemp.textContent = `${temp}°C`;
+  currentTemp.textContent = `${temp}°${tempUnit}`;
   location.textContent = `${resolvedAddress}`;
   lastUpdated.textContent = `Last Updated: ${datetime}`;
   conditionsNow.textContent = `${conditions}`;
-  feels.textContent = `${feelslike}°C`;
+  feels.textContent = `${feelslike}°${tempUnit}`;
   precip.textContent = `${precipprob}%`;
-  wind.textContent = `${getWindDirection(winddir)} / ${windspeed} km/h`;
+  wind.textContent = `${getWindDirection(winddir)} / ${windspeed} ${dist}/h`;
   humid.textContent = `${humidity}%`;
   uv.textContent = `${uvindex}`;
-  visibile.textContent = `${visibility} km`;
+  visibile.textContent = `${visibility} ${dist}`;
 
   try {
     const iconPath = await import(`../assets/${icon}.svg`);
     const currIcon = document.querySelector('.current-icon');
     currIcon.src = iconPath.default;
     currIcon.alt = `${conditions}`;
+    currIcon.title = `${conditions}`;
   } catch (error) {
     console.log(error);
   }
+
+  updateGif(conditions);
 }
